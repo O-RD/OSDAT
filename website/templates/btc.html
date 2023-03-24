@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}Trace BTC Address{% endblock %}
+
+
+{% block content%}
+
+<form method="post">
+    <br>
+    <img src="https://bitquery.io/wp-content/uploads/2020/08/blockchain-analysis-tools-thegem-blog-default.png" style="border:5px solid rgb(0, 0, 0)">
+    <br><br>
+    <h3 align="center">Trace</h3>
+    <div class="form-group">
+        <label for="btcAddress"> Bitcoin Address</label>
+        <input
+        type="text"
+        class="form-control"
+        id="btcAddress"
+        name="btcAddress"
+        placeholder="Please enter the address"
+        />
+    </div>
+
+    <div class="form-group">
+        <label for="BTChops"> Number of hops</label>
+        <input
+        type="number"
+        class="form-control"
+        id="BTChops"
+        name="BTChops"
+        placeholder="Please enter the number of hops"
+        />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<br><br>
+
+<div>
+    <table align="center" style="border: 1px solid black; padding: auto; width: 100%;">
+        <tr style="font-size: large; padding-left: 5; padding-top: 5; padding-right: 5;padding-bottom: 5; align-items: center; border: 1px solid black">
+            {% for header in headings %}
+            <th style="border: 1px solid black;">{{ header }}</th>
+            {% endfor %}
+        </tr>
+
+        {% for row in data %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+
+{% endblock %}
