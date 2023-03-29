@@ -2,7 +2,7 @@
 
 OSDAT(Open Soource Digital Asset Tracing)was developed as an analytical tool to track bitcoin transactions. The code has 3 main scripts which are parser.py, webscraping.py and MVP.py.  We are taking the parsed bitcoin data, putting it into a parser and analysing it and matching it with addresses that we webscared from bitcoin explorer. This helps us know which addresses must've been malicious when we trace the trail back. The data of the bitcoin transaction and the abused addresses are all uploaded on a database in elasticsearch which we access to do the analytics
 
-## Workflow of OSCAP
+## Workflow of OSDAT
 
 The codebase consists of 3 scripts -
 1. webscraping.py
